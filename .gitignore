@@ -21,5 +21,4 @@
 .byebug_history
 
 #ignoring db config
-/config/database.yml
 config/database.yml
