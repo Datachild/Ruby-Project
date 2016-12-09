@@ -20,6 +20,9 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 # Use react for frontend
 gem 'react-rails'
+#Use bootstrap and Sass CSS
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '>= 3.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
