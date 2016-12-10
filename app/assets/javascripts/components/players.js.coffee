@@ -10,13 +10,13 @@
           className: 'title'
           'Players'
           React.DOM.table
-          className: 'table table-bordered'
+      #    className: 'table table-bordered'
           React.DOM.thead null,
             React.DOM.tr null,
               React.DOM.th null, 'First Name'
               React.DOM.th null, 'Last Name'
               React.DOM.th null, 'Position'
               React.DOM.th null, 'Type'
-      #     React.DOM.tbody null,
-      #       for player in @state.players
-      #         React.createElement Player, key: player.id, player: player
+          React.DOM.tbody null,
+            for player in @state.players
+              React.createElement Player, key: player.id, player: player
