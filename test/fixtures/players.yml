@@ -3,13 +3,13 @@
 one:
   first_name: MyString
   last_name: MyString
-  card_type: MyString
   position: MyString
+  card_type: MyString
   picture: MyString
 
 two:
   first_name: MyString
   last_name: MyString
-  card_type: MyString
   position: MyString
+  card_type: MyString
   picture: MyString
