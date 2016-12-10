@@ -9,8 +9,8 @@
          React.DOM.h2
           className: 'title'
           'Players'
-          React.DOM.table
-      #    className: 'table table-bordered'
+          React.DOM.table null,
+          className: 'table table-bordered'
           React.DOM.thead null,
             React.DOM.tr null,
               React.DOM.th null, 'First Name'
