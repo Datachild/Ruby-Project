@@ -18,6 +18,7 @@
     valid: ->
       @state.first_name && @state.last_name && @state.position && @state.card_type
     render: ->
+      positions: {'F','D'}
       React.DOM.form
         className: 'form-inline'
         onSubmit: @handleSubmit
@@ -41,12 +42,10 @@
             onChange: @handleChange
         React.DOM.div
           className: 'form-group'
-          React.DOM.input
-            type: 'text'
+          React.DOM.select
             className: 'form-control'
-            placeholder: 'Position'
             name: 'position'
-            value: @state.position
+            values: positions
             onChange: @handleChange
         React.DOM.div
           className: 'form-group'
