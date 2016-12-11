@@ -4,13 +4,15 @@
     getDefaultProps: ->
       players: []
     addPlayer: (player) ->
-      players = @state.players.slice()
-      players.push player
+      #players = @state.players.slice()
+      #players.push player
+      React.addons.update(@state.players, { $push: [player] })
       @setState players: players
     deletePlayer: (player) ->
-      players = @state.players.splice()
+      #players = @state.players.splice()
       index = players.indexOf player
-      players.splice index, 1
+      #players.splice index, 1
+      players = React.addons.update(@state.players, { $splice: [[index, 1]] })
       @replaceState players: players
     render: ->
       React.DOM.div
