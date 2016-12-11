@@ -47,7 +47,7 @@
             name: 'position'
             onChange: @handleChange
             for pos in positions
-              React.DOM.Option
+              React.DOM.option
                 value: pos
                 {pos}
         React.DOM.div
