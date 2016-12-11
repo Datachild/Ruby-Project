@@ -3,12 +3,18 @@
       players: @props.data
     getDefaultProps: ->
       players: []
+    addPlayer: (player) ->
+ +    players = @state.players.slice()
+ +    players.push player
+ +    @setState players: players
     render: ->
       React.DOM.div
          className: 'players'
          React.DOM.h2
           className: 'title'
           'Players'
+          React.createElement PlayerForm, handleNewRecord: @addPlayer
+          React.DOM.hr null
           React.DOM.table
             className: 'table table-bordered'
             React.DOM.thead null,
