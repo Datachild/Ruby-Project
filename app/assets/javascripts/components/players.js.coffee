@@ -13,6 +13,7 @@
          React.DOM.h2
           className: 'title'
           'Players'
+          React.createElement TotalBox, type: 'info', amount: @total(), text: 'Total PLayers'
           React.createElement PlayerForm, handleNewPlayer: @addPlayer
           React.DOM.hr null
           React.DOM.table
@@ -26,3 +27,5 @@
             React.DOM.tbody null,
               for player in @state.players
                 React.createElement Player, key: player.id, player: player
+    total: ->
+      total = @state.players.length
