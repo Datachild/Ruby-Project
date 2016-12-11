@@ -7,6 +7,11 @@
       players = @state.players.slice()
       players.push player
       @setState players: players
+    deletePlayer: (player) ->
+      players = @state.players.splice()
+      index = players.indexOf player
+      players.splice index, 1
+      @replaceState players: players
     render: ->
       React.DOM.div
          className: 'players'
