@@ -18,7 +18,7 @@
     valid: ->
       @state.first_name && @state.last_name && @state.position && @state.card_type
     render: ->
-      positions = {'F','D'}
+      positions = ['F','D']
       React.DOM.form
         className: 'form-inline'
         onSubmit: @handleSubmit
@@ -49,7 +49,7 @@
             for pos in positions
               React.DOM.Option
                 value: pos
-                pos
+                {pos}
         React.DOM.div
           className: 'form-group'
           React.DOM.input
