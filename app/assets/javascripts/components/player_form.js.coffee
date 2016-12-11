@@ -46,7 +46,10 @@
             className: 'form-control'
             name: 'position'
             onChange: @handleChange
-            { positions }
+            for pos in positions
+              React.DOM.Option
+                value: pos
+                pos
         React.DOM.div
           className: 'form-group'
           React.DOM.input
