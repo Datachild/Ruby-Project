@@ -9,11 +9,18 @@
     handleChange: (e) ->
       name = e.target.name
       @setState "#{ name }": e.target.value
+    handleSubmit: (e) ->
+      e.preventDefault()
+      $.post '', { player: @state }, (data) =>
+        @props.handleNewPlayer data
+        @setState @getInitialState()
+      , 'JSON'
     valid: ->
       @state.first_name && @state.last_name && @state.position && @state.card_type
     render: ->
       React.DOM.form
         className: 'form-inline'
+        onSubmit: @handleSubmit
         React.DOM.div
           className: 'form-group'
           React.DOM.input

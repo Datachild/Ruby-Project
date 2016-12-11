@@ -13,7 +13,7 @@
          React.DOM.h2
           className: 'title'
           'Players'
-          React.createElement PlayerForm, handleNewRecord: @addPlayer
+          React.createElement PlayerForm, handleNewPlayer: @addPlayer
           React.DOM.hr null
           React.DOM.table
             className: 'table table-bordered'
