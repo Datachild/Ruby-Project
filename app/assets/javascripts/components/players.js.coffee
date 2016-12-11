@@ -24,6 +24,7 @@
                 React.DOM.th null, 'Last Name'
                 React.DOM.th null, 'Position'
                 React.DOM.th null, 'Type'
+                React.DOM.th null, 'Options'
             React.DOM.tbody null,
               for player in @state.players
                 React.createElement Player, key: player.id, player: player

@@ -2,6 +2,11 @@ class PlayersController < ApplicationController
   def index
       @players = Player.all
     end
+  def destroy
+      @player = Player.find(params[:id])
+      @player.destroy
+      head :no_content
+    end
   def create
       @player = Player.new(player_params)
 
