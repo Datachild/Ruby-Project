@@ -4,9 +4,9 @@
     getDefaultProps: ->
       players: []
     addPlayer: (player) ->
- +    players = @state.players.slice()
- +    players.push player
- +    @setState players: players
+      players = @state.players.slice()
+      players.push player
+      @setState players: players
     render: ->
       React.DOM.div
          className: 'players'
