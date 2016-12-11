@@ -7,6 +7,14 @@ class PlayersController < ApplicationController
       @player.destroy
       head :no_content
     end
+  def update
+      @player = Player.find(params[:id])
+      if @player.update(player_params)
+        render json: @player
+      else
+        render json: @player.errors, status: :unprocessable_entity
+      end
+    end
   def create
       @player = Player.new(player_params)
 

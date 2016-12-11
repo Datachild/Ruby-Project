@@ -8,6 +8,10 @@
       #players.push player
       React.addons.update(@state.players, { $push: [player] })
       @setState players: players
+    updatePlayer: (player, data) ->
+      index = @state.players.indexOf player
+      players = React.addons.update(@state.players, { $splice: [[index, 1, data]] })
+      @replaceState players: players
     deletePlayer: (player) ->
       #players = @state.players.splice()
       index = players.indexOf player
@@ -34,6 +38,6 @@
                 React.DOM.th null, 'Options'
             React.DOM.tbody null,
               for player in @state.players
-                React.createElement Player, key: player.id, player: player, handleDeletePlayer: @deletePlayer
+                React.createElement Player, key: player.id, player: player, handleDeletePlayer: @deletePlayer, handleEditPlayer: @updatePLayer
     total: ->
       total = @state.players.length
