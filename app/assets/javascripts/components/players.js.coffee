@@ -32,6 +32,6 @@
                 React.DOM.th null, 'Options'
             React.DOM.tbody null,
               for player in @state.players
-                React.createElement Player, key: player.id, player: player
+                React.createElement Player, key: player.id, player: player, handleDeleteRecord: @deleteRecord
     total: ->
       total = @state.players.length
