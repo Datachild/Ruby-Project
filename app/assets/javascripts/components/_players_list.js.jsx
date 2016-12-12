@@ -17,7 +17,8 @@ var PlayersList = React.createClass({
       data: {player: player},
       success:() => {
         var index = this.state.players.indexOf(oldPlayer);
-        var players = this.state.players.splice(index,1,player);
+        var players = this.state.players;
+        players.splice(index,1,player);
         this.setState({players: players});
       }
     });
