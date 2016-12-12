@@ -1,4 +1,4 @@
-var PlayersList = React.createClass({
+var Player = React.createClass({
   render(){
     return(
       <tr key={this.props.player.id}>
