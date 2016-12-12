@@ -8,8 +8,8 @@ var PlayersList = React.createClass({
     }
   },
   sortPlayers(atr){
-    var order = (atr != this.state.sortBy || this.state.sortOrder == 'desc')?'asc':'desc';
-    this.setState({ sortBy: atr, sortOrder: order })
+    // var order = (atr != this.state.sortBy || this.state.sortOrder == 'desc')?'asc':'desc';
+    // this.setState({ sortBy: atr, sortOrder: order })
   },
   componentDidMount() {
     $.getJSON('/api/v1/players.json', (response) => { this.setState({ players: response }) });
