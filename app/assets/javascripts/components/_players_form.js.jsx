@@ -8,7 +8,6 @@ var PlayersForm = React.createClass({
       url: '/api/v1/players',
       type: 'POST'
       date: {player:{ first_name: first_name, last_name: last_name, position: position, card_type: card_type }}
-      // success: (response) => {}
     })
   }
   render() {
