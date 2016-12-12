@@ -8,7 +8,7 @@ var PlayersList = React.createClass({
   },
   handleAddPlayer(player){
     var newState = this.state.players.concat(player);
-    this.setState({ items: newState })
+    this.setState({ players: newState })
   },
   render() {
     var players = this.state.players.map((player) => {
