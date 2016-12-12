@@ -3,8 +3,13 @@ var PlayersList = React.createClass({
   getInitialState() {
     return {
       players: [],
-      sortBy: 'last_name'
+      sortBy: 'last_name',
+      sortOrder: 'asc'
     }
+  },
+  sortPlayers(atr){
+    var order = (atr != this.state.sortBy || this.state.sortOrder == 'desc')?'asc':'desc';
+    this.setState({ sortBy: atr, sortOrder: order })
   },
   componentDidMount() {
     $.getJSON('/api/v1/players.json', (response) => { this.setState({ players: response }) });
@@ -39,7 +44,7 @@ var PlayersList = React.createClass({
     });
   },
   render() {
-    var players = _.sortBy(this.state.players, this.state.sortBy);
+    var players = _.orderBy(this.state.players, this.state.sortBy, this.state.sortOrder);
     players = players.map((player) => {
       return(
         <Player key={player.id} player={player}
@@ -53,10 +58,10 @@ var PlayersList = React.createClass({
           <tbody className="table-striped">
             <PlayersForm handleAddPlayer={this.handleAddPlayer} />
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Position</th>
-              <th>Type</th>
+              <th onClick="this.sortPlayers('first_name');">First Name</th>
+              <th onClick="this.sortPlayers('last_name');">Last Name</th>
+              <th onClick="this.sortPlayers('position');">Position</th>
+              <th onClick="this.sortPlayers('type');">Type</th>
               <th>Options</th>
             </tr>
             {players}
