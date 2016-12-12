@@ -32,7 +32,7 @@ var PlayersList = React.createClass({
           <td>{player.card_type}</td>
           <td>
             <button>Edit</button>
-            <button onClick={this.handleDeletePlayer(player.id)}>Delete</button>
+            <button onClick={this.handleDeletePlayer(this,player.id)}>Delete</button>
           </td>
         </tr>
       )
