@@ -11,6 +11,7 @@ var PlayersForm = React.createClass({
       success: (player) => {
           this.props.handleAddPlayer(player);
           this.refs.first_name.value = this.refs.last_name.value = this.refs.position.value = this.refs.card_type.value = '';
+          this.refs.first_name.focus();
       }
     });
   },
