@@ -12,6 +12,7 @@ var Player = React.createClass({
     var card_type = this.refs.card_type.value;
     var player = {id: this.props.player.id, first_name: first_name, last_name: last_name, position: position, card_type: card_type};
     this.props.handleEditPlayer(this.props.player,player);
+    this.toggleEdit();
   },
   render(){
     return(this.state.editable? this.renderEditable() : this.renderNonEditable())
