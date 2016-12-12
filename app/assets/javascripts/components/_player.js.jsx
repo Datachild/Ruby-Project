@@ -2,16 +2,16 @@ var Player = React.createClass({
   getInitialState(){
     return {editable: false}
   },
-  handleEditPlayer(cancel){
-    if(this.state.editable && !cancel){
-      var first_name = this.refs.first_name.value;
-      var last_name = this.refs.last_name.value;
-      var position = this.refs.position.value;
-      var card_type = this.refs.card_type.value;
-      var player = {id: this.props.player.id, first_name: first_name, last_name: last_name, position: position, card_type: card_type};
-      this.props.handleEditPlayer(this.props.player,player);
-    }
-    this.setState({ editable: !this.state.editable })
+  toggleState(){
+    this.setState({ editable: !this.state.editable });
+  },
+  handleEditPlayer(){
+    var first_name = this.refs.first_name.value;
+    var last_name = this.refs.last_name.value;
+    var position = this.refs.position.value;
+    var card_type = this.refs.card_type.value;
+    var player = {id: this.props.player.id, first_name: first_name, last_name: last_name, position: position, card_type: card_type};
+    this.props.handleEditPlayer(this.props.player,player);
   },
   render(){
     return(this.state.editable? this.renderEditable() : this.renderNonEditable())
@@ -37,7 +37,7 @@ var Player = React.createClass({
         </td>
         <td>
           <button type="button" className="btn btn-success" onClick={this.handleEditPlayer}>Save</button>
-          <button type="button" className="btn btn-warning" onClick={this.handleEditPlayer(true)}>Cancel</button>
+          <button type="button" className="btn btn-warning" onClick={this.toggleState}>Cancel</button>
         </td>
       </tr>
     )
@@ -50,7 +50,7 @@ var Player = React.createClass({
         <td>{this.props.player.position}</td>
         <td>{this.props.player.card_type}</td>
         <td>
-          <button type="button" className="btn btn-info" onClick={this.handleEditPlayer}>Edit</button>
+          <button type="button" className="btn btn-info" onClick={this.toggleState}>Edit</button>
           <button type="button" className="btn btn-danger" onClick={this.props.handleDeletePlayer}>Delete</button>
         </td>
       </tr>
