@@ -39,8 +39,8 @@ var PlayersList = React.createClass({
     })
     return (
       <div>
-        <table>
-          <tbody>
+        <table className="table">
+          <tbody className="table-striped">
             <PlayersForm handleAddPlayer={this.handleAddPlayer} />
             <tr>
               <th>First Name</th>
