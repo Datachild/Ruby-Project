@@ -12,7 +12,12 @@ var Player = React.createClass({
     this.setState({ editable: !this.state.editable })
   },
   render(){
-    this.state.editable? this.renderEditable() : this.renderNonEditable() ;
+    if(this.state.editable) {
+      this.renderEditable();
+    }
+    else {
+      this.renderNonEditable();
+    }
   },
   renderEditable(){
     return(
