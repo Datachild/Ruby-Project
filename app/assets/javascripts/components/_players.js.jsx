@@ -1,7 +1,7 @@
 var Players = React.createClass({
   render() {
     return (
-      <div>
+      <div class="container">
         <PlayersList />
       </div>
     )
