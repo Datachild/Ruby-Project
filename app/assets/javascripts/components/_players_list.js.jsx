@@ -11,8 +11,16 @@ var PlayersList = React.createClass({
     this.setState({ players: newState })
   },
   handleEditPlayer(player){
-    // var newState = this.state.players.concat(player);
-    // this.setState({ players: newState })
+    $.ajax({
+      url: '/api/v1/players/${player.id}',
+      type: 'PUT',
+      data: {player: player},
+      success:() => {
+        var players = this.state.players.filter((i) => {return i.id != player.id });
+        players.push(player);
+        this.setState({players: players});
+      }
+    });
   },
   handleDeletePlayer(id) {
     $.ajax({
