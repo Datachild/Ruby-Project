@@ -14,9 +14,9 @@ var PlayersList = React.createClass({
     $.ajax({
       url: `/api/v1/players/${id}`,
       type: 'DELETE',
-      success(response) {
+      success:()  => {
         var newState = this.state.players.filter((player) => {
-          return player.id != response.id;
+          return player.id != id;
         });
         this.setState({ players: newState });
       }
@@ -32,7 +32,7 @@ var PlayersList = React.createClass({
           <td>{player.card_type}</td>
           <td>
             <button>Edit</button>
-            <button onClick={this.handleDeletePlayer(this,player.id)}>Delete</button>
+            <button onClick={this.handleDeletePlayer.bind(this,player.id)}>Delete</button>
           </td>
         </tr>
       )
