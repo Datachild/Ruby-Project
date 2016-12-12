@@ -1,7 +1,10 @@
 
 var PlayersList = React.createClass({
   getInitialState() {
-    return {players: []}
+    return {
+      players: [],
+      sortBy: 'last_name'
+    }
   },
   componentDidMount() {
     $.getJSON('/api/v1/players.json', (response) => { this.setState({ players: response }) });
@@ -36,7 +39,8 @@ var PlayersList = React.createClass({
     });
   },
   render() {
-    var players = this.state.players.map((player) => {
+    var players = _sortBy(this.state.players, this.state.sortBy);
+    players = players.map((player) => {
       return(
         <Player key={player.id} player={player}
           handleDeletePlayer={this.handleDeletePlayer.bind(this,player.id)}
