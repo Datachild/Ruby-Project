@@ -2,7 +2,7 @@ var Player = React.createClass({
   getInitialState(){
     return {editable: false}
   },
-  toggleState(){
+  toggleEdit(){
     this.setState({ editable: !this.state.editable });
   },
   handleEditPlayer(){
@@ -37,7 +37,7 @@ var Player = React.createClass({
         </td>
         <td>
           <button type="button" className="btn btn-success" onClick={this.handleEditPlayer}>Save</button>
-          <button type="button" className="btn btn-warning" onClick={this.toggleState}>Cancel</button>
+          <button type="button" className="btn btn-warning" onClick={this.toggleEdit}>Cancel</button>
         </td>
       </tr>
     )
@@ -50,7 +50,7 @@ var Player = React.createClass({
         <td>{this.props.player.position}</td>
         <td>{this.props.player.card_type}</td>
         <td>
-          <button type="button" className="btn btn-info" onClick={this.toggleState}>Edit</button>
+          <button type="button" className="btn btn-info" onClick={this.toggleEdit}>Edit</button>
           <button type="button" className="btn btn-danger" onClick={this.props.handleDeletePlayer}>Delete</button>
         </td>
       </tr>
