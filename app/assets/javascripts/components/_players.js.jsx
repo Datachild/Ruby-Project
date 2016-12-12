@@ -1,12 +1,10 @@
 // app/assets/javascripts/components/_main.js.jsx
 
-var Main = React.createClass({
+var Players = React.createClass({
   render() {
     return (
       <div>
-        <Header />
-        <Players />
-        <Footer />
+        <PlayersList />
       </div>
     )
   }
