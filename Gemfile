@@ -20,6 +20,8 @@ gem 'responders'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Use lodash as the JavaScript library for sorting and other useful array manipulations
+gem 'lodash-rails'
 # Use react for frontend
 gem 'react-rails'
 # Use bootstrap
