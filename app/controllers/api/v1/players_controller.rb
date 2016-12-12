@@ -22,7 +22,7 @@ class Api::V1::PlayersController < Api::V1::BaseController
   end
 
   def update
-    @player = Player.find(params[:id])
+    @player = Player.find(params["id"])
     player.update_attributes(player_params)
     respond_with player, json: player
     # if @player.update(player_params)
@@ -33,6 +33,6 @@ class Api::V1::PlayersController < Api::V1::BaseController
   end
   private
   def player_params
-    params.require(:player).permit(:id, :first_name, :last_name, :position, :card_type)
+    params.require(:player).permit(:first_name, :last_name, :position, :card_type)
   end
 end
