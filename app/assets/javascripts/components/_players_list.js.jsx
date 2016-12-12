@@ -39,7 +39,7 @@ var PlayersList = React.createClass({
     });
   },
   render() {
-    var players = _sortBy(this.state.players, this.state.sortBy);
+    var players = _.sortBy(this.state.players, this.state.sortBy);
     players = players.map((player) => {
       return(
         <Player key={player.id} player={player}
