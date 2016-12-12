@@ -17,17 +17,17 @@ var Player = React.createClass({
   renderEditable(){
     return(
       <tr>
-        <td><input ref="first_name" className="form-control" type='text' defaultValue='{this.props.player.first_name}' /></td>
-        <td><input ref="last_name" className="form-control" type='text' defaultValue='{this.props.player.last_name}' /></td>
+        <td><input ref="first_name" className="form-control" type='text' defaultValue={this.props.player.first_name} /></td>
+        <td><input ref="last_name" className="form-control" type='text' defaultValue={this.props.player.last_name} /></td>
         <td>
-          <select ref="position" className="form-control" defaultValue='{this.props.player.position}'>
+          <select ref="position" className="form-control" defaultValue={this.props.player.position}>
             <option value="">Position</option>
             <option value="F">F</option>
             <option value="D">D</option>
           </select>
         </td>
         <td>
-          <select ref="card_type" className="form-control" defaultValue='{this.props.player.card_type}'>
+          <select ref="card_type" className="form-control" defaultValue={this.props.player.card_type}>
             <option value="">Type</option>
             <option value="GOLD">GOLD</option>
             <option value="BRONZE">BRONZE</option>
