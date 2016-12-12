@@ -27,7 +27,7 @@ var PlayersList = React.createClass({
             <th>Position</th>
             <th>Type</th>
           </tr>
-          {items}
+          {players}
         </table>
       </div>
     )
