@@ -6,7 +6,10 @@ var PlayersList = React.createClass({
   componentDidMount() {
     $.getJSON('/api/v1/players.json', (response) => { this.setState({ players: response }) });
   },
-
+  handleAddPlayer(player){
+    var newState = this.state.players.concat(player);
+    this.setState({ items: newState })
+  },
   render() {
     var players = this.state.players.map((player) => {
       return(
@@ -26,7 +29,7 @@ var PlayersList = React.createClass({
       <div>
         <table>
           <tbody>
-            <PlayersForm />
+            <PlayersForm handleAddPlayer={this.handleAddPlayer} />
             <tr>
               <th>First Name</th>
               <th>Last Name</th>

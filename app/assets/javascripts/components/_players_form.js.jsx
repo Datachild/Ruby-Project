@@ -7,7 +7,10 @@ var PlayersForm = React.createClass({
     $.ajax({
       url: '/api/v1/players',
       type: 'POST',
-      data: { player: { first_name: first_name, last_name: last_name, position: position, card_type: card_type } }
+      data: { player: { first_name: first_name, last_name: last_name, position: position, card_type: card_type } },
+      success: (player) => {
+          this.props.handleAddPlayer(player);
+      }
     });
   },
   render() {
