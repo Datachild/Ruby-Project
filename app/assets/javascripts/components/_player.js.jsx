@@ -2,8 +2,8 @@ var Player = React.createClass({
   getInitialState(){
     return {editable: false}
   },
-  handleEditPlayer(){
-    if(this.state.editable){
+  handleEditPlayer(cancel){
+    if(this.state.editable && !cancel){
       var first_name = this.refs.first_name.value;
       var last_name = this.refs.last_name.value;
       var position = this.refs.position.value;
@@ -37,7 +37,7 @@ var Player = React.createClass({
         </td>
         <td>
           <button type="button" className="btn btn-success" onClick={this.handleEditPlayer}>Save</button>
-          <button type="button" className="btn btn-warning" onClick={this.handleEditPlayer}>Cancel</button>
+          <button type="button" className="btn btn-warning" onClick={this.handleEditPlayer(true)}>Cancel</button>
         </td>
       </tr>
     )
