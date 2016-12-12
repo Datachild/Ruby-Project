@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal: one
+  assist1: one
+  assist2: one
+  period: 1
+  goal_type: MyString
+
+two:
+  goal: two
+  assist1: two
+  assist2: two
+  period: 1
+  goal_type: MyString
