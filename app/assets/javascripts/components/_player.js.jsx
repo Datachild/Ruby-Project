@@ -9,7 +9,7 @@ var Player = React.createClass({
       var position = this.refs.position.value;
       var card_type = this.refs.card_type.value;
       var player = {id: this.props.player.id, first_name: first_name, last_name: last_name, position: position, card_type: card_type};
-      this.props.handleEditPlayer(player);
+      this.props.handleEditPlayer(this.props.player,player);
     }
     this.setState({ editable: !this.state.editable })
   },

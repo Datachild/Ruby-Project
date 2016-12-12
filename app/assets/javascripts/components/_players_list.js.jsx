@@ -10,14 +10,14 @@ var PlayersList = React.createClass({
     var newState = this.state.players.concat(player);
     this.setState({ players: newState })
   },
-  handleEditPlayer(player){
+  handleEditPlayer(oldPlayer,player){
     $.ajax({
       url: `/api/v1/players/${player.id}`,
       type: 'PUT',
       data: {player: player},
       success:() => {
-        var players = this.state.players.filter((i) => {return i.id != player.id });
-        players.push(player);
+        var index = this.state.players.indexOf(oldPlayer);
+        var players = this.state.players.splice(index,1,player);
         this.setState({players: players});
       }
     });
