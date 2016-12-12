@@ -14,11 +14,11 @@ var PlayersList = React.createClass({
     $.ajax({
       url: `/api/v1/players/${id}`,
       type: 'DELETE',
-      success() {
+      success(response) {
         var newState = this.state.players.filter((player) => {
-          return player.id != id; 
+          return player.id != response.id;
         });
-        this.setState({ items: newState });
+        this.setState({ players: newState });
       }
     });
   },
