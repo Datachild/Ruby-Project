@@ -12,7 +12,7 @@ var PlayersList = React.createClass({
   },
   handleEditPlayer(player){
     $.ajax({
-      url: '/api/v1/players/${player.id}',
+      url: `/api/v1/players/${player.id}`,
       type: 'PUT',
       data: {player: player},
       success:() => {
