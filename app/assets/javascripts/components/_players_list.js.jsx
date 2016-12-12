@@ -29,7 +29,7 @@ var PlayersList = React.createClass({
   render() {
     var players = this.state.players.map((player) => {
       return(
-        <Player player={player}
+        <Player key={player.id} player={player}
           handleDeletePlayer={this.handleDeletePlayer.bind(this,player.id)}
           handleEditPlayer={this.handleEditPlayer} />
       )
