@@ -58,10 +58,10 @@ var PlayersList = React.createClass({
           <tbody className="table-striped">
             <PlayersForm handleAddPlayer={this.handleAddPlayer} />
             <tr>
-              <th onClick={this.handleSortPlayers('first_name')}>First Name</th>
-              <th onClick={this.handleSortPlayers('last_name')}>Last Name</th>
-              <th onClick={this.handleSortPlayers('position')}>Position</th>
-              <th onClick={this.handleSortPlayers('type')}>Type</th>
+              <th onClick={() => this.handleSortPlayers('first_name')}>First Name</th>
+              <th onClick={() => this.handleSortPlayers('last_name')}>Last Name</th>
+              <th onClick={() => this.handleSortPlayers('position')}>Position</th>
+              <th onClick={() => this.handleSortPlayers('type')}>Type</th>
               <th>Options</th>
             </tr>
             {players}
