@@ -10,7 +10,7 @@ var PlayersList = React.createClass({
     var newState = this.state.players.concat(player);
     this.setState({ players: newState })
   },
-  handleDeletePlayer() {
+  handleDeletePlayer(id) {
     $.ajax({
       url: `/api/v1/players/${id}`,
       type: 'DELETE',
@@ -32,7 +32,7 @@ var PlayersList = React.createClass({
           <td>{player.card_type}</td>
           <td>
             <button>Edit</button>
-            <button onClick={this.handleDeletePlayer}>Delete</button>
+            <button onClick={this.handleDeletePlayer(player.id)}>Delete</button>
           </td>
         </tr>
       )
