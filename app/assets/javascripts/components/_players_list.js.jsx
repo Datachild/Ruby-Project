@@ -31,8 +31,8 @@ var PlayersList = React.createClass({
           <td>{player.position}</td>
           <td>{player.card_type}</td>
           <td>
-            <button>Edit</button>
-            <button onClick={this.handleDeletePlayer.bind(this,player.id)}>Delete</button>
+            <button className="btn btn-info">Edit</button>
+            <button className="btn btn-danger" onClick={this.handleDeletePlayer.bind(this,player.id)}>Delete</button>
           </td>
         </tr>
       )

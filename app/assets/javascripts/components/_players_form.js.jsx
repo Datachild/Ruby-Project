@@ -34,7 +34,7 @@ var PlayersForm = React.createClass({
             <option value="BRONZE">BRONZE</option>
           </select>
         </td>
-        <td><button onClick={this.handleClick}>Create</button></td>
+        <td><button className="btn btn-primary" onClick={this.handleClick}>Create</button></td>
       </tr>
     )
   }
