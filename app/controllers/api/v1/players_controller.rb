@@ -20,6 +20,7 @@ class Api::V1::PlayersController < Api::V1::BaseController
     # @player.destroy
     # head :no_content
   end
+
   def update
     @player = Player.find(params[:id])
     player.update_attributes(player_params)
@@ -32,6 +33,6 @@ class Api::V1::PlayersController < Api::V1::BaseController
   end
   private
   def player_params
-    params.require(:player).permit(:first_name, :last_name, :position, :card_type)
+    params.require(:player).permit(:id, :first_name, :last_name, :position, :card_type)
   end
 end
