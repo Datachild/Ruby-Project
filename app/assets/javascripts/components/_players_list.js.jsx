@@ -10,6 +10,10 @@ var PlayersList = React.createClass({
     var newState = this.state.players.concat(player);
     this.setState({ players: newState })
   },
+  handleEditPlayer(player){
+    // var newState = this.state.players.concat(player);
+    // this.setState({ players: newState })
+  },
   handleDeletePlayer(id) {
     $.ajax({
       url: `/api/v1/players/${id}`,
@@ -25,16 +29,9 @@ var PlayersList = React.createClass({
   render() {
     var players = this.state.players.map((player) => {
       return(
-        <tr key={player.id}>
-          <td>{player.first_name}</td>
-          <td>{player.last_name}</td>
-          <td>{player.position}</td>
-          <td>{player.card_type}</td>
-          <td>
-            <button type="button" className="btn btn-info">Edit</button>
-            <button type="button" className="btn btn-danger" onClick={this.handleDeletePlayer.bind(this,player.id)}>Delete</button>
-          </td>
-        </tr>
+        <Player player={player}
+          handleDeletePlayer={this.handleDeletePlayer.bind(this,player.id)}
+          handleEditPlayer={this.handleEditPlayer} />
       )
     })
     return (
