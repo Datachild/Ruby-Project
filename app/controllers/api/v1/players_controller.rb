@@ -22,7 +22,7 @@ class Api::V1::PlayersController < Api::V1::BaseController
   end
 
   def update
-    @player = Player.find(params["id"])
+    player = Player.find(params["id"])
     player.update_attributes(player_params)
     respond_with player, json: player
     # if @player.update(player_params)
