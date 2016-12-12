@@ -15,6 +15,10 @@ var PlayersList = React.createClass({
           <td>{player.last_name}</td>
           <td>{player.position}</td>
           <td>{player.card_type}</td>
+          <td>
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
         </tr>
       )
     })
@@ -22,11 +26,13 @@ var PlayersList = React.createClass({
       <div>
         <table>
           <tbody>
+            <PlayersForm />
             <tr>
               <th>First Name</th>
               <th>Last Name</th>
               <th>Position</th>
               <th>Type</th>
+              <th>Options</th>
             </tr>
             {players}
           </tbody>
