@@ -10,6 +10,7 @@ var PlayersForm = React.createClass({
       data: { player: { first_name: first_name, last_name: last_name, position: position, card_type: card_type } },
       success: (player) => {
           this.props.handleAddPlayer(player);
+          this.refs.first_name.value = this.refs.last_name.value = this.refs.position.value = this.refs.card_type.value = '';
       }
     });
   },
