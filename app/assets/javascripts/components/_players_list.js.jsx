@@ -1,5 +1,5 @@
 
-var playersList = React.createClass({
+var PlayersList = React.createClass({
   getInitialState() {
     return {players: []}
   },
