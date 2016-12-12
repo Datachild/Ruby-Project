@@ -21,13 +21,15 @@ var PlayersList = React.createClass({
     return (
       <div>
         <table>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Position</th>
-            <th>Type</th>
-          </tr>
-          {players}
+          <tbody>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Position</th>
+              <th>Type</th>
+            </tr>
+            {players}
+          </tbody>
         </table>
       </div>
     )
