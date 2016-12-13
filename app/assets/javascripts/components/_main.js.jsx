@@ -5,12 +5,12 @@ var Main = React.createClass({
     return {page: 'players'}
   },
   render() {
-    var page = switch(this.state.page){
+    switch(this.state.page){
       case 'goals':
-        return( <Goals /> )
+        page = return( <Goals /> )
       break
       default:
-        return( <PLayers /> )
+        page = return( <PLayers /> )
     }
     return (
       <div>
