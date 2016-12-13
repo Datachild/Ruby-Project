@@ -9,10 +9,10 @@ var GoalsList = React.createClass({
   componentDidMount() {
     $.getJSON('/api/v1/goals.json', (response) => { this.setState({ goals: response.goals }) });
   },
-  // handleAddPlayer(player){
-  //   var newState = this.state.players.concat(player);
-  //   this.setState({ players: newState })
-  // },
+  handleAddGoal(goal){
+    var newState = this.state.goals.concat(goal);
+    this.setState({ goals: newState })
+  },
   // handleSortPlayers(atr){
   //   var order = (atr != this.state.sortBy || this.state.sortOrder == 'desc')?'asc':'desc';
   //   this.setState({ sortBy: atr, sortOrder: order })
@@ -53,6 +53,7 @@ var GoalsList = React.createClass({
       <div>
         <table className="table">
           <tbody className="table-striped">
+            <GoalsForm handleAddGoal={this.handleAddGoal} />
             <tr>
               <th>Scorer</th>
               <th>Assist</th>
