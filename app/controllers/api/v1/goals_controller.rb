@@ -1,6 +1,6 @@
 class Api::V1::GoalsController < Api::V1::BaseController
   def index
-    respond_with Goal.all
+    @goals = Goal.all
   end
 
   def show
