@@ -8,6 +8,7 @@ var Header = React.createClass({
     this.props.handlePageSwitch(tab);
     $('#tm_'+this.state.activeTab).removeClass('active');
     $('#tm_'+tab).addClass('active');
+    this.setState({activeTab:tab});
   },
   render() {
     return (
