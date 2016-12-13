@@ -64,12 +64,12 @@ var GoalsForm = React.createClass({
         <td>
           <select className="form-control" ref="goal_type">
             <option value="">Type</option>
-            <option value="GOLD">Wrist Shot</option>
-            <option value="BRONZE">Slap Shot</option>
-            <option value="BRONZE">Backhand</option>
-            <option value="BRONZE">One Timer</option>
-            <option value="BRONZE">Deflect</option>
-            <option value="BRONZE">Deflect</option>
+            <option value="Wrist Shot">Wrist Shot</option>
+            <option value="Slap Shot">Slap Shot</option>
+            <option value="Backhand">Backhand</option>
+            <option value="One Timer">One Timer</option>
+            <option value="Deflect">Deflect</option>
+            <option value="Tip In">Tip In</option>
           </select>
         </td>
         <td><button type="button" className="btn btn-primary" onClick={this.handleClick}>Create</button></td>
