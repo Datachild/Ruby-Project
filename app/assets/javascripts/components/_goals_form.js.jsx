@@ -20,7 +20,7 @@ var GoalsForm = React.createClass({
     });
   },
   componentDidMount() {
-    $.getJSON('/api/v1/players.json', (response) => { this.setState({ players: _.orderBy(response, 'last_name') }) });
+    $.getJSON('/api/v1/players.json', (response) => { this.setState({ players: _.orderBy(response, 'last_name' , 'asc') }) });
   },
   render() {
     var player_options = player_options.map((player) => {
