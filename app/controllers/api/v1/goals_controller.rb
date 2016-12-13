@@ -8,7 +8,7 @@ class Api::V1::GoalsController < Api::V1::BaseController
   end
 
   def create
-    respond_with :api, :v1, Goal.create(goal_params)
+    @goal = :api, :v1, Goal.create(goal_params)
   end
 
   def destroy
