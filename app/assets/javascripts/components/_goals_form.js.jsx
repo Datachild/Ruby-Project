@@ -13,9 +13,10 @@ var GoalsForm = React.createClass({
       type: 'POST',
       data: { goal: { goal_scorer_id: goal_scorer_id, goal_assist1_id: goal_assist1_id, goal_assist2_id: goal_assist2_id, period: period, goal_type: goal_type } },
       success: (goal) => {
-          this.props.handleAddGoal(goal);
-          this.refs.goal_scorer_id.value = this.refs.goal_assist1_id.value = this.refs.goal_assist2_id.value = this.refs.period.value = this.refs.goal_type.value = '';
-          this.refs.goal_scorer_id.focus();
+          console.log(goal);
+          // this.props.handleAddGoal(goal);
+          // this.refs.goal_scorer_id.value = this.refs.goal_assist1_id.value = this.refs.goal_assist2_id.value = this.refs.period.value = this.refs.goal_type.value = '';
+          // this.refs.goal_scorer_id.focus();
       }
     });
   },
