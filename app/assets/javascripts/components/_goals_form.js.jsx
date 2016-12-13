@@ -47,7 +47,7 @@ var GoalsForm = React.createClass({
           </select>
         </td>
         <td>
-          <select className="form-control" ref="position">
+          <select className="form-control" ref="period">
             <option value="">Period</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -57,7 +57,7 @@ var GoalsForm = React.createClass({
           </select>
         </td>
         <td>
-          <select className="form-control" ref="card_type">
+          <select className="form-control" ref="goal_type">
             <option value="">Type</option>
             <option value="GOLD">Wrist Shot</option>
             <option value="BRONZE">Slap Shot</option>
