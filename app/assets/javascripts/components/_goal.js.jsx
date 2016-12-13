@@ -1,4 +1,4 @@
-var Player = React.createClass({
+var Goal = React.createClass({
   getInitialState(){
     return {editable: false}
   },
