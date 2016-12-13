@@ -7,7 +7,7 @@ var GoalsList = React.createClass({
     }
   },
   componentDidMount() {
-    $.getJSON('/api/v1/goals.json', (response) => { this.setState({ goals: response }) });
+    $.getJSON('/api/v1/goals.json', (response) => { this.setState({ goals: response.goals }) });
   },
   // handleAddPlayer(player){
   //   var newState = this.state.players.concat(player);
