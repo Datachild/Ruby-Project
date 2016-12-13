@@ -6,8 +6,8 @@ var Header = React.createClass({
   },
   changeTab(tab){
     this.props.handlePageSwitch(tab);
-    this.refs.("tm_"+this.state.activeTab).className = '';
-    this.refs.("tm_"+tab).className = 'active';
+    this.refs.{"tm_"+this.state.activeTab}.className = '';
+    this.refs.{"tm_"+tab}.className = 'active';
   },
   render() {
     return (
