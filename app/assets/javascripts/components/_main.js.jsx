@@ -4,6 +4,9 @@ var Main = React.createClass({
   getInitialState(){
     return {page: 'players'}
   },
+  handlePageSwitch(page){
+    setState({page : page});
+  }
   render() {
     switch(this.state.page){
       case 'goals':
@@ -14,7 +17,7 @@ var Main = React.createClass({
     }
     return (
       <div>
-        <Header />
+        <Header handlePageSwitch={this.handlePageSwitch} />
         {page}
         <Footer />
       </div>

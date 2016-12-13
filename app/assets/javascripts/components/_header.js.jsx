@@ -4,8 +4,8 @@ var Header = React.createClass({
   render() {
     return (
       <ul className="nav nav-tabs">
-        <li role="presentation" className="active"><a>Players</a></li>
-        <li role="presentation"><a>Goals</a></li>
+        <li ref="tm_players" role="presentation" className="active" onClick={() => this.props.handlePageSwitch('players')}><a>Players</a></li>
+        <li ref="tm_goals" role="presentation" onClick={() => this.props.handlePageSwitch('goals')}><a>Goals</a></li>
       </ul>
     )
   }
