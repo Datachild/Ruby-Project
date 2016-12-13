@@ -2,13 +2,20 @@
 
 var Main = React.createClass({
   getInitialState(){
-    return {page: '<Players />'}
+    return {page: 'players'}
   },
   render() {
+    var page = switch(this.state.page){
+      case 'goals':
+        return( <Goals /> )
+      break
+      default:
+        return( <PLayers /> )
+    }
     return (
       <div>
         <Header />
-        {this.state.page}
+        {page}
         <Footer />
       </div>
     )
