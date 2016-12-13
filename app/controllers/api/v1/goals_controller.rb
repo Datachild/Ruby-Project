@@ -4,7 +4,7 @@ class Api::V1::GoalsController < Api::V1::BaseController
   end
 
   def show
-    Goal.find(params["id"])
+    respond_with Goal.find(params["id"])
   end
 
   def create
