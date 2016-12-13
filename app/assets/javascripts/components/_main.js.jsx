@@ -7,10 +7,10 @@ var Main = React.createClass({
   render() {
     switch(this.state.page){
       case 'goals':
-        page = return( <Goals /> )
+        page = return( <Goals /> );
       break
       default:
-        page = return( <PLayers /> )
+        page = return( <PLayers /> );
     }
     return (
       <div>
