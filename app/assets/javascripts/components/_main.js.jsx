@@ -5,11 +5,10 @@ var Main = React.createClass({
     return {page: '<Players />'}
   },
   render() {
-    var page = return({this.state.page});
     return (
       <div>
         <Header />
-        {page}
+        {this.state.page}
         <Footer />
       </div>
     )
