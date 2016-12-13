@@ -4,7 +4,6 @@ var Footer = React.createClass({
   render() {
     return (
       <div>
-        <h1>Goodbye world</h1>
       </div>
     )
   }

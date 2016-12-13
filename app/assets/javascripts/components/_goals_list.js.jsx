@@ -43,7 +43,6 @@ var GoalsList = React.createClass({
   //   });
   // },
   render() {
-    console.log(this.state.goals);
     var goals = _.orderBy(this.state.goals, this.state.sortBy, this.state.sortOrder);
     goals = goals.map((goal) => {
       return(
