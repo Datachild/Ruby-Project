@@ -45,10 +45,11 @@ var Goal = React.createClass({
     // )
   },
   renderNonEditable(){
-    console.log(this.props.goal.goal_scorer.first_name);
+    console.log(this.props.goal.goal_scorer);
+    var scorer = this.props.goal.goal_scorer;
     return(
       <tr>
-        <td>{this.props.goal.goal_scorer.first_name} {this.props.goal.goal_scorer.last_name}</td>
+        <td>{scorer.first_name} {scorer.last_name}</td>
         <td>{this.props.goal.goal_assist1.first_name} {this.props.goal.goal_assist1.last_name}</td>
         <td>{this.props.goal.goal_assist2.first_name} {this.props.goal.goal_assist2.last_name}</td>
         <td>{this.props.goal.period}</td>
