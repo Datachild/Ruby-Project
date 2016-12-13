@@ -45,6 +45,7 @@ var Goal = React.createClass({
     // )
   },
   renderNonEditable(){
+    console.log(this.props.goal);
     console.log(this.props.goal.goal_scorer);
     var scorer = this.props.goal.goal_scorer;
     return(
