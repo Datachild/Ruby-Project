@@ -4,7 +4,7 @@ class Api::V1::PlayersController < Api::V1::BaseController
   end
 
   def show
-    respond_with Player.all
+    respond_with Player.filter(params["id"])
   end
 
   def create
