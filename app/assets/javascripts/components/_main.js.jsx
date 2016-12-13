@@ -10,7 +10,7 @@ var Main = React.createClass({
         page = <Goals />;
       break
       default:
-        page = <PLayers />;
+        page = <Players />;
     }
     return (
       <div>
