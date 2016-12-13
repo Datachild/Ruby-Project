@@ -3,9 +3,9 @@ var GoalsForm = React.createClass({
     return { players: [] }
   },
   handleClick() {
-    var goal_scorer_id = this.refs.goal_scorer.value;
-    var goal_assist1_id = this.refs.goal_assist1.value;
-    var goal_assist2_id = this.refs.goal_assist2.value;
+    var goal_scorer_id = this.refs.goal_scorer_id.value;
+    var goal_assist1_id = this.refs.goal_assist1_id.value;
+    var goal_assist2_id = this.refs.goal_assist2_id.value;
     var period = this.refs.period.value;
     var goal_type = this.refs.goal_type.value;
     $.ajax({
