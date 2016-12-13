@@ -6,7 +6,7 @@ var Main = React.createClass({
   },
   handlePageSwitch(page){
     setState({page : page});
-  }
+  },
   render() {
     switch(this.state.page){
       case 'goals':
