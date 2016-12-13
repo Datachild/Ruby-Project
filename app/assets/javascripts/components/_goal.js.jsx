@@ -18,7 +18,7 @@ var Player = React.createClass({
     return(this.state.editable? this.renderEditable() : this.renderNonEditable())
   },
   renderEditable(){
-    return()
+    return(<div></div>)
     // return(
     //   <tr>
     //     <td><input ref="first_name" className="form-control" type='text' defaultValue={this.props.player.first_name} /></td>
