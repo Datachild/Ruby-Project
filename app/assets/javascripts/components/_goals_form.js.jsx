@@ -23,7 +23,7 @@ var GoalsForm = React.createClass({
     $.getJSON('/api/v1/players.json', (response) => { this.setState({ players: _.orderBy(response, 'last_name' , 'asc') }) });
   },
   render() {
-    var player_options = player_options.map((player) => {
+    var player_options = this.state.players.map((player) => {
       return( <option value="{player.id}">{player.last_name} {player.first_name} - {player.position} - {player.card_type}</option> )
     })
     return (
