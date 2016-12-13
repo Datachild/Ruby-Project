@@ -18,6 +18,6 @@ class Api::V1::GoalsController < Api::V1::BaseController
   end
   private
   def goal_params
-    params.require(:goal).permit(:id, :goal_scorer, :goal_assist1, :goal_assist2, :period, :goal_type)
+    params.require(:goal).permit(:id, :goal_scorer_id, :goal_assist1_id, :goal_assist2_id, :period, :goal_type)
   end
 end
