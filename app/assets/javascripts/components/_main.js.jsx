@@ -5,6 +5,7 @@ var Main = React.createClass({
     return {page: 'players'}
   },
   render() {
+    var page = return();
     switch(this.state.page){
       case 'goals':
         page = return( <Goals /> );
