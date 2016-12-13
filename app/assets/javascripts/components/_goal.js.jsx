@@ -45,6 +45,7 @@ var Goal = React.createClass({
     // )
   },
   renderNonEditable(){
+    console.log(this.props.goal);
     return(
       <tr>
         <td>{this.props.goal.goal_scorer.first_name} {this.props.goal.goal_scorer.last_name}</td>
