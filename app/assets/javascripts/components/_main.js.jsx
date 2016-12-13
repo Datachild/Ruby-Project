@@ -5,7 +5,7 @@ var Main = React.createClass({
     return {page: 'players'}
   },
   handlePageSwitch(page){
-    setState({page : page});
+    this.setState({page : page});
   },
   render() {
     switch(this.state.page){
