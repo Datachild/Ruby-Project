@@ -24,7 +24,7 @@ var GoalsForm = React.createClass({
   },
   render() {
     var player_options = this.state.players.map((player) => {
-      return( <option value="{player.id}">{player.last_name} {player.first_name} - {player.position} - {player.card_type}</option> )
+      return( <option key={player.id} value="{player.id}">{player.last_name} {player.first_name} - {player.position} - {player.card_type}</option> )
     })
     return (
       <tr>
