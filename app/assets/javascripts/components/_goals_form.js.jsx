@@ -30,16 +30,19 @@ var GoalsForm = React.createClass({
       <tr>
         <td>
           <select className="form-control" ref="goal_scorer_id">
+            <option value="">Goal Scorer</option>
             {player_options}
           </select>
         </td>
         <td>
           <select className="form-control" ref="goal_assist1_id">
+            <option value="">Assist 1</option>
             {player_options}
           </select>
         </td>
         <td>
           <select className="form-control" ref="goal_assist2_id">
+            <option value="">Assist 2</option>
             {player_options}
           </select>
         </td>
