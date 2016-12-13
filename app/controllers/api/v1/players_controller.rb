@@ -3,6 +3,10 @@ class Api::V1::PlayersController < Api::V1::BaseController
     respond_with Player.all
   end
 
+  def show
+    respond_with Player.all
+  end
+
   def create
     respond_with :api, :v1, Player.create(player_params)
     # @player = Player.new(player_params)
