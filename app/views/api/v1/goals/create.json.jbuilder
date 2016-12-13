@@ -1,4 +1,4 @@
-json.goal do
+json.goal @goal do |goal|
   json.id goal.id
   json.created_at goal.created_at
   json.period goal.period
