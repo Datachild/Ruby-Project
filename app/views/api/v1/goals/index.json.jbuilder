@@ -1,0 +1,2 @@
+json.goals do
+end
