@@ -3,9 +3,10 @@
 var Header = React.createClass({
   render() {
     return (
-      <div>
-        <h1>Hello, World!</h1>
-      </div> 
+      <ul className="nav nav-tabs">
+        <li role="presentation" className="active"><a>Players</a></li>
+        <li role="presentation"><a>Goals</a></li>
+      </ul>
     )
   }
 });
