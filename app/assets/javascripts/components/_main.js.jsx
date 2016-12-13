@@ -5,7 +5,7 @@ var Main = React.createClass({
     return {page: '<Players />'}
   },
   render() {
-    var page = this.state.page;
+    var page = return({this.state.page});
     return (
       <div>
         <Header />
