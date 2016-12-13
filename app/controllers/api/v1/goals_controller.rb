@@ -3,6 +3,10 @@ class Api::V1::GoalsController < Api::V1::BaseController
     respond_with Goal.all
   end
 
+  def show
+    respond_with Goal.find(params["id"])
+  end
+
   def create
     respond_with :api, :v1, Goal.create(goal_params)
   end
