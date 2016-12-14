@@ -20,17 +20,20 @@ var GoalsList = React.createClass({
     this.setState({ sortBy: atr, sortOrder: order })
   },
   handleEditPlayer(oldGoal,goal){
-    // $.ajax({
-    //   url: `/api/v1/players/${player.id}`,
-    //   type: 'PUT',
-    //   data: {player: player},
-    //   success:() => {
-    //     var index = this.state.players.indexOf(oldPlayer);
-    //     var players = this.state.players;
-    //     players.splice(index,1,player);
-    //     this.setState({players: players});
-    //   }
-    // });
+    $.ajax({
+      url: `/api/v1/goals/${player.id}`,
+      type: 'PUT',
+      data: {goal: goal},
+      success:() => {
+        var index = this.state.goal.indexOf(oldGoal);
+        var goals = this.state.goals;
+        goal.goal_scorer = this.state.players[_.findIndex(this.state.players,['id',goal.goal_scorer_id])];
+        goal.goal_assist1 = this.state.players[_.findIndex(this.state.players,['id',goal.goal_assist1_id])];
+        goal.goal_assist2 = this.state.players[_.findIndex(this.state.players,['id',goal.goal_assist2_id])];
+        goals.splice(index,1,goal);
+        this.setState({goals: goals});
+      }
+    });
   },
   handleDeleteGoal(id) {
     $.ajax({
