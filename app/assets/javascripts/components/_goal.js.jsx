@@ -6,43 +6,69 @@ var Goal = React.createClass({
     this.setState({ editable: !this.state.editable });
   },
   handleEditGoal(){
-    var first_name = this.refs.first_name.value;
-    var last_name = this.refs.last_name.value;
-    var position = this.refs.position.value;
-    var card_type = this.refs.card_type.value;
-    var player = {id: this.props.player.id, first_name: first_name, last_name: last_name, position: position, card_type: card_type};
-    this.props.handleEditPlayer(this.props.player,player);
-    this.toggleEdit();
+    var goal_scorer_id = this.refs.goal_scorer_id.value;
+    var goal_assist1_id = this.refs.goal_assist1_id.value;
+    var goal_assist2_id = this.refs.goal_assist2_id.value;
+    var period = this.refs.period.value;
+    var goal_type = this.refs.goal_type.value;
+    // var player = {id: this.props.player.id, first_name: first_name, last_name: last_name, position: position, card_type: card_type};
+    // this.props.handleEditPlayer(this.props.player,player);
+    // this.toggleEdit();
   },
   render(){
     return(this.state.editable? this.renderEditable() : this.renderNonEditable())
   },
   renderEditable(){
-    return(<div></div>)
-    // return(
-    //   <tr>
-    //     <td><input ref="first_name" className="form-control" type='text' defaultValue={this.props.player.first_name} /></td>
-    //     <td><input ref="last_name" className="form-control" type='text' defaultValue={this.props.player.last_name} /></td>
-    //     <td>
-    //       <select ref="position" className="form-control" defaultValue={this.props.player.position}>
-    //         <option value="">Position</option>
-    //         <option value="F">F</option>
-    //         <option value="D">D</option>
-    //       </select>
-    //     </td>
-    //     <td>
-    //       <select ref="card_type" className="form-control" defaultValue={this.props.player.card_type}>
-    //         <option value="">Type</option>
-    //         <option value="GOLD">GOLD</option>
-    //         <option value="BRONZE">BRONZE</option>
-    //       </select>
-    //     </td>
-    //     <td>
-    //       <button type="button" className="btn btn-success" onClick={this.handleEditGoal}>Save</button>
-    //       <button type="button" className="btn btn-warning" onClick={this.toggleEdit}>Cancel</button>
-    //     </td>
-    //   </tr>
-    // )
+    var player_options = this.props.players.map((player) => {
+      return( <option key={player.id} value={player.id}>{player.last_name} {player.first_name} - {player.position} - {player.card_type}</option> )
+    })
+    return(
+      <tr>
+        <td>
+          <select className="form-control" ref="goal_scorer_id" defaultValue={this.props.goal.goal_scorer_id}>
+            <option value="">Goal Scorer</option>
+            {player_options}
+          </select>
+        </td>
+        <td>
+          <select className="form-control" ref="goal_assist1_id" defaultValue={this.props.goal.goal_assist1_id}>
+            <option value="">Assist 1</option>
+            {player_options}
+          </select>
+        </td>
+        <td>
+          <select className="form-control" ref="goal_assist2_id" defaultValue={this.props.goal.goal_assist2_id}>
+            <option value="">Assist 2</option>
+            {player_options}
+          </select>
+        </td>
+        <td>
+          <select className="form-control" ref="period" defaultValue={this.props.goal.period}>
+            <option value="">Period</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="2">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+        <td>
+          <select className="form-control" ref="goal_type" defaultValue={this.props.goal.goal_type}>
+            <option value="">Type</option>
+            <option value="Wrist Shot">Wrist Shot</option>
+            <option value="Slap Shot">Slap Shot</option>
+            <option value="Backhand">Backhand</option>
+            <option value="One Timer">One Timer</option>
+            <option value="Deflect">Deflect</option>
+            <option value="Tip In">Tip In</option>
+          </select>
+        </td>
+        <td>
+          <button type="button" className="btn btn-success" onClick={this.handleEditGoal}>Save</button>
+          <button type="button" className="btn btn-warning" onClick={this.toggleEdit}>Cancel</button>
+        </td>
+      </tr>
+    )
   },
   renderNonEditable(){
     return(
