@@ -12,7 +12,7 @@ var Goal = React.createClass({
     var period = this.refs.period.value;
     var goal_type = this.refs.goal_type.value;
     var goal = {id: this.props.goal.id, goal_scorer_id: goal_scorer_id, goal_assist1_id: goal_assist1_id, goal_assist2_id: goal_assist2_id, period: period, goal_type: goal_type};
-    this.props.handleEditPlayer(this.props.goal,goal);
+    this.props.handleEditGoal(this.props.goal,goal);
     this.toggleEdit();
   },
   render(){
