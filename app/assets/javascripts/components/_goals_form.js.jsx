@@ -1,7 +1,4 @@
-var GoalsForm = React.createClass({
-  getInitialState() {
-    return { players: [] }
-  },
+var GoalsForm = React.createClass({B
   handleClick() {
     var goal_scorer_id = this.refs.goal_scorer_id.value;
     var goal_assist1_id = this.refs.goal_assist1_id.value;
@@ -13,20 +10,17 @@ var GoalsForm = React.createClass({
       type: 'POST',
       data: { goal: { goal_scorer_id: goal_scorer_id, goal_assist1_id: goal_assist1_id, goal_assist2_id: goal_assist2_id, period: period, goal_type: goal_type } },
       success: (goal) => {
-          goal.goal_scorer = this.state.players[_.findIndex(this.state.players,['id',goal.goal_scorer_id])];
-          goal.goal_assist1 = this.state.players[_.findIndex(this.state.players,['id',goal.goal_assist1_id])];
-          goal.goal_assist2 = this.state.players[_.findIndex(this.state.players,['id',goal.goal_assist2_id])];
+          goal.goal_scorer = this.props.players[_.findIndex(this.props.players,['id',goal.goal_scorer_id])];
+          goal.goal_assist1 = this.props.players[_.findIndex(this.props.players,['id',goal.goal_assist1_id])];
+          goal.goal_assist2 = this.props.players[_.findIndex(this.props.players,['id',goal.goal_assist2_id])];
           this.props.handleAddGoal(goal);
           this.refs.goal_scorer_id.value = this.refs.goal_assist1_id.value = this.refs.goal_assist2_id.value = this.refs.period.value = this.refs.goal_type.value = '';
           this.refs.goal_scorer_id.focus();
       }
     });
   },
-  componentDidMount() {
-    $.getJSON('/api/v1/players.json', (response) => { this.setState({ players: _.orderBy(response, 'last_name' , 'asc') }) });
-  },
   render() {
-    var player_options = this.state.players.map((player) => {
+    var player_options = this.props.players.map((player) => {
       return( <option key={player.id} value={player.id}>{player.last_name} {player.first_name} - {player.position} - {player.card_type}</option> )
     })
     return (

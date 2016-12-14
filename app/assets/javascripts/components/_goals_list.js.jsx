@@ -2,12 +2,14 @@ var GoalsList = React.createClass({
   getInitialState() {
     return {
       goals: [],
+      players: [],
       sortBy: 'created_at',
       sortOrder: 'asc'
     }
   },
   componentDidMount() {
     $.getJSON('/api/v1/goals.json', (response) => { this.setState({ goals: response.goals }) });
+    $.getJSON('/api/v1/players.json', (response) => { this.setState({ players: _.orderBy(response, 'last_name' , 'asc') }) });
   },
   handleAddGoal(goal){
     var newState = this.state.goals.concat(goal);
@@ -47,6 +49,7 @@ var GoalsList = React.createClass({
     goals = goals.map((goal) => {
       return(
         <Goal key={goal.id} goal={goal}
+                            players={this.state.players}
                             handleDeleteGoal={this.handleDeleteGoal.bind(this,goal.id)}
                             handleEditGoal={this.handleEditGoal}
          />
@@ -56,7 +59,7 @@ var GoalsList = React.createClass({
       <div>
         <table className="table">
           <tbody className="table-striped">
-            <GoalsForm handleAddGoal={this.handleAddGoal} />
+            <GoalsForm handleAddGoal={this.handleAddGoal} players={this.state.players} />
             <tr>
               <th>Scorer</th>
               <th>Assist</th>

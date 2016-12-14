@@ -2,18 +2,18 @@ var Goal = React.createClass({
   getInitialState(){
     return {editable: false}
   },
-  // toggleEdit(){
-  //   this.setState({ editable: !this.state.editable });
-  // },
-  // handleEditPlayer(){
-  //   var first_name = this.refs.first_name.value;
-  //   var last_name = this.refs.last_name.value;
-  //   var position = this.refs.position.value;
-  //   var card_type = this.refs.card_type.value;
-  //   var player = {id: this.props.player.id, first_name: first_name, last_name: last_name, position: position, card_type: card_type};
-  //   this.props.handleEditPlayer(this.props.player,player);
-  //   this.toggleEdit();
-  // },
+  toggleEdit(){
+    this.setState({ editable: !this.state.editable });
+  },
+  handleEditGoal(){
+    var first_name = this.refs.first_name.value;
+    var last_name = this.refs.last_name.value;
+    var position = this.refs.position.value;
+    var card_type = this.refs.card_type.value;
+    var player = {id: this.props.player.id, first_name: first_name, last_name: last_name, position: position, card_type: card_type};
+    this.props.handleEditPlayer(this.props.player,player);
+    this.toggleEdit();
+  },
   render(){
     return(this.state.editable? this.renderEditable() : this.renderNonEditable())
   },
@@ -38,7 +38,7 @@ var Goal = React.createClass({
     //       </select>
     //     </td>
     //     <td>
-    //       <button type="button" className="btn btn-success" onClick={this.handleEditPlayer}>Save</button>
+    //       <button type="button" className="btn btn-success" onClick={this.handleEditGoal}>Save</button>
     //       <button type="button" className="btn btn-warning" onClick={this.toggleEdit}>Cancel</button>
     //     </td>
     //   </tr>
@@ -53,7 +53,7 @@ var Goal = React.createClass({
         <td>{this.props.goal.period}</td>
         <td>{this.props.goal.goal_type}</td>
         <td>
-          <button type="button" className="btn btn-info">Edit</button>
+          <button type="button" className="btn btn-info" onClick={this.toggleEdit}>Edit</button>
           <button type="button" className="btn btn-danger" onClick={this.props.handleDeleteGoal}>Delete</button>
         </td>
       </tr>
