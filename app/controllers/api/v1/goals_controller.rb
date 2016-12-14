@@ -8,7 +8,12 @@ class Api::V1::GoalsController < Api::V1::BaseController
   end
 
   def create
-    @goal = Goal.create(goal_params)
+    @goal = Goal.new(goal_params)
+    if @goal.save
+      render json: @goal
+    else
+      render json: @goal.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
