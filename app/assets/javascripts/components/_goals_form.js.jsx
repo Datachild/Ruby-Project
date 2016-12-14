@@ -2,7 +2,7 @@ var GoalsForm = React.createClass({
   handleClick() {
     var goal_scorer_id = this.refs.goal_scorer_id.value;
     var goal_assist1_id = (this.refs.goal_assist1_id.value)?this.refs.goal_assist1_id.value:0;
-    var goal_assist2_id = this.refs.goal_assist2_id.value;
+    var goal_assist2_id = (this.refs.goal_assist2_id.value)?this.refs.goal_assist2_id.value:0;
     var period = this.refs.period.value;
     var goal_type = this.refs.goal_type.value;
     console.log(goal_assist1_id);
