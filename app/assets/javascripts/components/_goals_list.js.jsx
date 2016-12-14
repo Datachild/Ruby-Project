@@ -24,7 +24,7 @@ var GoalsList = React.createClass({
       url: `/api/v1/goals/${goal.id}`,
       type: 'PUT',
       data: {goal: goal},
-      success:() => {
+      success:(goal) => {
         var index = this.state.goals.indexOf(oldGoal);
         var goals = this.state.goals;
         goal.goal_scorer = this.state.players[_.findIndex(this.state.players,['id',goal.goal_scorer_id])];
