@@ -20,6 +20,7 @@ var GoalsList = React.createClass({
     this.setState({ sortBy: atr, sortOrder: order })
   },
   handleEditGoal(oldGoal,goal){
+    console.log(goal);
     $.ajax({
       url: `/api/v1/goals/${goal.id}`,
       type: 'PUT',
