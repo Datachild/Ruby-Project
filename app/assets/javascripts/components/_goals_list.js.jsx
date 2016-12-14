@@ -13,40 +13,43 @@ var GoalsList = React.createClass({
     var newState = this.state.goals.concat(goal);
     this.setState({ goals: newState })
   },
-  // handleSortPlayers(atr){
-  //   var order = (atr != this.state.sortBy || this.state.sortOrder == 'desc')?'asc':'desc';
-  //   this.setState({ sortBy: atr, sortOrder: order })
-  // },
-  // handleEditPlayer(oldPlayer,player){
-  //   $.ajax({
-  //     url: `/api/v1/players/${player.id}`,
-  //     type: 'PUT',
-  //     data: {player: player},
-  //     success:() => {
-  //       var index = this.state.players.indexOf(oldPlayer);
-  //       var players = this.state.players;
-  //       players.splice(index,1,player);
-  //       this.setState({players: players});
-  //     }
-  //   });
-  // },
-  // handleDeletePlayer(id) {
-  //   $.ajax({
-  //     url: `/api/v1/players/${id}`,
-  //     type: 'DELETE',
-  //     success:()  => {
-  //       var newState = this.state.players.filter((player) => {
-  //         return player.id != id;
-  //       });
-  //       this.setState({ players: newState });
-  //     }
-  //   });
-  // },
+  handleSortGoals(atr){
+    var order = (atr != this.state.sortBy || this.state.sortOrder == 'desc')?'asc':'desc';
+    this.setState({ sortBy: atr, sortOrder: order })
+  },
+  handleEditPlayer(oldGoal,goal){
+    // $.ajax({
+    //   url: `/api/v1/players/${player.id}`,
+    //   type: 'PUT',
+    //   data: {player: player},
+    //   success:() => {
+    //     var index = this.state.players.indexOf(oldPlayer);
+    //     var players = this.state.players;
+    //     players.splice(index,1,player);
+    //     this.setState({players: players});
+    //   }
+    // });
+  },
+  handleDeleteGoal(id) {
+    $.ajax({
+      url: `/api/v1/goals/${id}`,
+      type: 'DELETE',
+      success:()  => {
+        var newState = this.state.goals.filter((goal) => {
+          return goal.id != id;
+        });
+        this.setState({ goals: newState });
+      }
+    });
+  },
   render() {
     var goals = _.orderBy(this.state.goals, this.state.sortBy, this.state.sortOrder);
     goals = goals.map((goal) => {
       return(
-        <Goal key={goal.id} goal={goal} />
+        <Goal key={goal.id} goal={goal}
+                            handleDeleteGoal={this.handleDeleteGoal.bind(this,goal.id)}
+                            handleEditGoal={this.handleEditGoal}
+         />
       )
     })
     return (
