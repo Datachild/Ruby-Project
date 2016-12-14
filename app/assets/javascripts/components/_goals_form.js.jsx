@@ -5,8 +5,6 @@ var GoalsForm = React.createClass({
     var goal_assist2_id = (this.refs.goal_assist2_id.value)?this.refs.goal_assist2_id.value:0;
     var period = this.refs.period.value;
     var goal_type = this.refs.goal_type.value;
-    console.log(goal_assist1_id);
-    console.log(goal_assist2_id);
     $.ajax({
       url: '/api/v1/goals',
       type: 'POST',

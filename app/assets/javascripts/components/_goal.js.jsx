@@ -11,8 +11,8 @@ var Goal = React.createClass({
     var goal_assist2_id = this.refs.goal_assist2_id.value;
     var period = this.refs.period.value;
     var goal_type = this.refs.goal_type.value;
-    var player = {id: this.props.player.id, goal_scorer_id: goal_scorer_id, goal_assist1_id: goal_assist1_id, goal_assist2_id: goal_assist2_id, period: period, goal_type: goal_type};
-    this.props.handleEditPlayer(this.props.player,player);
+    var goal = {id: this.props.goal.id, goal_scorer_id: goal_scorer_id, goal_assist1_id: goal_assist1_id, goal_assist2_id: goal_assist2_id, period: period, goal_type: goal_type};
+    this.props.handleEditPlayer(this.props.goal,goal);
     this.toggleEdit();
   },
   render(){
