@@ -54,7 +54,7 @@ var Goal = React.createClass({
         <td>{this.props.goal.goal_type}</td>
         <td>
           <button type="button" className="btn btn-info">Edit</button>
-          <button type="button" className="btn btn-danger" onClick={this.props.handleDeletePlayer}>Delete</button>
+          <button type="button" className="btn btn-danger" onClick={this.props.handleDeleteGoal}>Delete</button>
         </td>
       </tr>
     )
