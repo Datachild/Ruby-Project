@@ -13,6 +13,7 @@ var GoalsForm = React.createClass({
       type: 'POST',
       data: { goal: { goal_scorer_id: goal_scorer_id, goal_assist1_id: goal_assist1_id, goal_assist2_id: goal_assist2_id, period: period, goal_type: goal_type } },
       success: (goal) => {
+          goal.goal_scorer = players[_.findIndex(this.state.players,['id',goal.goal_scorer_id])];
           console.log(goal.goal_scorer);
           // this.props.handleAddGoal(goal);
           // this.refs.goal_scorer_id.value = this.refs.goal_assist1_id.value = this.refs.goal_assist2_id.value = this.refs.period.value = this.refs.goal_type.value = '';
@@ -53,8 +54,8 @@ var GoalsForm = React.createClass({
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="2">3</option>
-            <option value="OT">OT</option>
-            <option value="SO">SO</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
           </select>
         </td>
         <td>
