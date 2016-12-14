@@ -71,8 +71,8 @@ var Goal = React.createClass({
     )
   },
   renderNonEditable(){
-    var assist1 = (this.props.goal.goal_assist1_id)?this.props.goal.goal_assist1.first_name+" "+this.props.goal.goal_assist1.last_name:"";
-    var assist2 = (this.props.goal.goal_assist2_id)?this.props.goal.goal_assist2.first_name+" "+this.props.goal.goal_assist2.last_name:"";
+    var assist1 = (this.props.goal.goal_assist1_id)?this.props.goal.goal_assist1.first_name+" "+this.props.goal.goal_assist1.last_name:"Unassisted";
+    var assist2 = (this.props.goal.goal_assist2_id)?this.props.goal.goal_assist2.first_name+" "+this.props.goal.goal_assist2.last_name:"Unassisted";
     return(
       <tr>
         <td>{this.props.goal.goal_scorer.first_name} {this.props.goal.goal_scorer.last_name}</td>
