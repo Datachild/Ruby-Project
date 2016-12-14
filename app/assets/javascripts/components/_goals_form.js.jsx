@@ -14,10 +14,11 @@ var GoalsForm = React.createClass({
       data: { goal: { goal_scorer_id: goal_scorer_id, goal_assist1_id: goal_assist1_id, goal_assist2_id: goal_assist2_id, period: period, goal_type: goal_type } },
       success: (goal) => {
           goal.goal_scorer = this.state.players[_.findIndex(this.state.players,['id',goal.goal_scorer_id])];
-          console.log(goal.goal_scorer);
-          // this.props.handleAddGoal(goal);
-          // this.refs.goal_scorer_id.value = this.refs.goal_assist1_id.value = this.refs.goal_assist2_id.value = this.refs.period.value = this.refs.goal_type.value = '';
-          // this.refs.goal_scorer_id.focus();
+          goal.goal_assist1 = this.state.players[_.findIndex(this.state.players,['id',goal.goal_assist1_id])];
+          goal.goal_assist2 = this.state.players[_.findIndex(this.state.players,['id',goal.goal_assist2_id])];
+          this.props.handleAddGoal(goal);
+          this.refs.goal_scorer_id.value = this.refs.goal_assist1_id.value = this.refs.goal_assist2_id.value = this.refs.period.value = this.refs.goal_type.value = '';
+          this.refs.goal_scorer_id.focus();
       }
     });
   },
