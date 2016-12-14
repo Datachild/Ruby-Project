@@ -21,7 +21,7 @@ var GoalsList = React.createClass({
   },
   handleEditGoal(oldGoal,goal){
     $.ajax({
-      url: `/api/v1/goals/${player.id}`,
+      url: `/api/v1/goals/${goal.id}`,
       type: 'PUT',
       data: {goal: goal},
       success:() => {
