@@ -1,4 +1,4 @@
-var GoalsForm = React.createClass({B
+var GoalsForm = React.createClass({
   handleClick() {
     var goal_scorer_id = this.refs.goal_scorer_id.value;
     var goal_assist1_id = this.refs.goal_assist1_id.value;
