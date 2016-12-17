@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       resources :goals, only: [:index, :show, :create, :destroy, :update]
     end
   end
-  
+
+  get '/site', to: 'site#index'
   # resources :players
   # root 'site#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
