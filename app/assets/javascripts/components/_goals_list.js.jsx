@@ -12,7 +12,8 @@ var GoalsList = React.createClass({
     $.getJSON('/api/v1/players.json', (response) => { this.setState({ players: _.orderBy(response, 'last_name' , 'asc') }) });
   },
   handleAddGoal(goal){
-    var newState = this.state.goals.unshift(goal);
+    var newState = this.state.goals;
+    newState.unshift(goal);
     this.setState({ goals: newState })
   },
   handleSortGoals(atr){
