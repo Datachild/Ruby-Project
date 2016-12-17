@@ -1,6 +1,6 @@
 class Api::V1::GoalsController < Api::V1::BaseController
   def index
-    @goals = Goal.all
+    @goals = Goal.all.sort_by &:created_at
   end
 
   def show
