@@ -4,7 +4,7 @@ var GoalsList = React.createClass({
       goals: [],
       players: [],
       sortBy: 'created_at',
-      sortOrder: 'asc'
+      sortOrder: 'desc'
     }
   },
   componentDidMount() {
@@ -12,7 +12,7 @@ var GoalsList = React.createClass({
     $.getJSON('/api/v1/players.json', (response) => { this.setState({ players: _.orderBy(response, 'last_name' , 'asc') }) });
   },
   handleAddGoal(goal){
-    var newState = this.state.goals.concat(goal);
+    var newState = this.state.goals.unshift(goal);
     this.setState({ goals: newState })
   },
   handleSortGoals(atr){
